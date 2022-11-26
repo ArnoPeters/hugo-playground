@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     env:
-      PRODUCTION_URL: "https://kind-water-03fb49d03.2.azurestaticapps.net/"
+      PRODUCTION_URL: "https://kind-water-03fb49d03-release.westeurope.2.azurestaticapps.net/"
       STAGING_URL: "${{ format('https://kind-water-03fb49d03-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
                                       #url copy-pasted from Azure -> static web app -> custom domains
                                         #  delightful-wave-068d6ad03.2.azurestaticapps.net
