@@ -44,6 +44,8 @@ jobs:
     - name: Install Sirv
       run: npm install --g sirv-cli
     - name: Run playwright tests
+      env:
+          PLAYWRIGHT_TEST_BASE_URL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
       run: npm run playwright_test
     - name: Get current date
       id: date
@@ -52,7 +54,6 @@ jobs:
       uses: actions/upload-artifact@v2
       env:
           TAG_NAME: test-report-${{ steps.date.outputs.date }}
-          PLAYWRIGHT_TEST_BASE_URL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
       if: ${{ always() }}
       
       with: 
