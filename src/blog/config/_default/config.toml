@@ -1,0 +1,18 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Blog'
+theme = "internet-weblog"  #https://themes.gohugo.io/themes/internet-weblog/
+
+
+# https://themes.gohugo.io/themes/chringel-hugo-theme/ -> auto light/dark device preference
+
+
+# Only required for non-directory based posts, to access images in redirected static folder. 
+#[[module.mounts]]
+#source = "content/images"
+#target = "assets/images"
+
+
+[markup]
+  [markup.highlight]
+    style = 'vs'  # https://xyproto.github.io/splash/docs/

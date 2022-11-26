@@ -1,0 +1,3 @@
+[submodule "src/blog/themes/internet-weblog"]
+	path = src/blog/themes/internet-weblog
+	url = https://github.com/ArnoPeters/hugo-theme-internet-weblog

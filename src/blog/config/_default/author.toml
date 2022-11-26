@@ -1,0 +1,7 @@
+# internet weblog config
+Handle = "TestUser"
+FirstName = "Test"
+LastName = "User"
+AboutPage = "/about"
+#Location = "Somewhere, Earth"
+#FlickrID = ""
