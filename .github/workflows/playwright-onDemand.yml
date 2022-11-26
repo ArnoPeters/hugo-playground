@@ -20,9 +20,10 @@ on:
 # Make env var reflect presence of token
 env:
   PAT_EXISTS: ${{ secrets.PAT_TOKEN }}
+  IS_PRODUCTION: "${{ github.ref == 'main' }}"
   PRODUCTION_URL: "https://kind-water-03fb49d03-release.westeurope.2.azurestaticapps.net/"
+  STAGING_URL: "${{ format('https://kind-water-03fb49d03-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"s made up of one or more jobs that can run sequentially or in parallel
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   test:
     # Runs on an ubuntu runner
@@ -51,6 +52,7 @@ jobs:
       uses: actions/upload-artifact@v2
       env:
           TAG_NAME: test-report-${{ steps.date.outputs.date }}
+          PLAYWRIGHT_TEST_BASE_URL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
       if: ${{ always() }}
       
       with: 
