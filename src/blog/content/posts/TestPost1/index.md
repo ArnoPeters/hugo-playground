@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: "TestPost1"
 author: ["Arno Peters"]
 title: "Test post 1"
