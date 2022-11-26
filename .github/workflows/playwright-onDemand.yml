@@ -20,7 +20,7 @@ on:
 # Make env var reflect presence of token
 env:
   PAT_EXISTS: ${{ secrets.PAT_TOKEN }}
-
+  PLAYWRIGHT_TEST_BASE_URL: "https://kind-water-03fb49d03-release.westeurope.2.azurestaticapps.net/"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   test:
