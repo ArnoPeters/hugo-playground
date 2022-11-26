@@ -22,7 +22,7 @@ env:
   PAT_EXISTS: ${{ secrets.PAT_TOKEN }}
   IS_PRODUCTION: "${{ github.ref == 'main' }}"
   PRODUCTION_URL: "https://kind-water-03fb49d03-release.westeurope.2.azurestaticapps.net/"
-  STAGING_URL: "${{ format('https://kind-water-03fb49d03-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"s made up of one or more jobs that can run sequentially or in parallel
+  STAGING_URL: "${{ format('https://kind-water-03fb49d03-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
 
 jobs:
   test:
