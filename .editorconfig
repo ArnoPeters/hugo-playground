@@ -9,6 +9,7 @@ indent_size = 3
 
 [*.{yml,yaml}]
 indent_style = space
+indent_size = 2
 
 # .Net Code
 [*.{cs,csx,vb,vbx}]
