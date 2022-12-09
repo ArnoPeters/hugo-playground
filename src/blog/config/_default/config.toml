@@ -1,8 +1,8 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://localhost:1313'
 languageCode = 'en-us'
 title = 'Blog'
 theme = "internet-weblog"  #https://themes.gohugo.io/themes/internet-weblog/
-
+#theme = "papermod" #https://github.com/adityatelange/hugo-PaperMod/wiki/Installation
 
 # https://themes.gohugo.io/themes/chringel-hugo-theme/ -> auto light/dark device preference
 
@@ -16,3 +16,13 @@ theme = "internet-weblog"  #https://themes.gohugo.io/themes/internet-weblog/
 [markup]
   [markup.highlight]
     style = 'vs'  # https://xyproto.github.io/splash/docs/
+  [markup.goldmark.renderer]
+    # for reveal.js - currently only the unsafe mode for goldmark is supported
+    unsafe = true  # required for templates and stuff
+
+[imaging]
+  #anchor = 'Smart'
+  #bgColor = '#ffffff'
+  #hint = 'photo'
+  quality = 100
+  resampleFilter = 'Lanczos'
