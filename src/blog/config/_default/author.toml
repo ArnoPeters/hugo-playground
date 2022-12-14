@@ -1,7 +1,7 @@
 # internet weblog config
-Handle = "TestUser"
-FirstName = "Test"
-LastName = "User"
+Handle = "ArnoPeters"
+FirstName = "Arno"
+LastName = "Peters"
 AboutPage = "/about"
-#Location = "Somewhere, Earth"
-#FlickrID = ""
+#Location = "Durham, NC"
+#FlickrID = "87151163@N00"

@@ -1,0 +1,14 @@
+# Defaults for reveal_hugo
+[reveal_hugo]
+history = true
+#custom_theme = "reveal-hugo/themes/robot-lung.css"
+theme = "dracula"
+margin = 0.2
+highlight_theme = "color-brewer"
+transition = "slide"
+transition_speed = "fast"
+
+# used in content/template-example
+[reveal_hugo.templates.grey]
+background = "#424242"
+transition = "convex"

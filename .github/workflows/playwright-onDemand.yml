@@ -20,8 +20,10 @@ on:
 # Make env var reflect presence of token
 env:
   PAT_EXISTS: ${{ secrets.PAT_TOKEN }}
-  PLAYWRIGHT_TEST_BASE_URL: "https://kind-water-03fb49d03-release.westeurope.2.azurestaticapps.net/"
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  IS_PRODUCTION: "${{ github.ref == 'main' }}"
+  PRODUCTION_URL: "https://kind-water-03fb49d03-release.westeurope.2.azurestaticapps.net/"
+  STAGING_URL: "${{ format('https://kind-water-03fb49d03-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
+
 jobs:
   test:
     # Runs on an ubuntu runner
@@ -42,6 +44,8 @@ jobs:
     - name: Install Sirv
       run: npm install --g sirv-cli
     - name: Run playwright tests
+      env:
+          PLAYWRIGHT_TEST_BASE_URL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
       run: npm run playwright_test
     - name: Get current date
       id: date
