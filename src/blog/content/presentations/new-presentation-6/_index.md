@@ -16,7 +16,7 @@ theme = "custom/aps-robot-lung"
 #custom_theme = "reveal-hugo/themes/aps-robot-lung.css"
 #custom_css = "custom.css"  # files can be page resource
 #custom_js = "custom.js"
-highlight_theme= "agate"
+#highlight_theme= "agate"
 
 +++
 
